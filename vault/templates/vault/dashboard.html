@@ -1,0 +1,26 @@
+<h2>Your Saved Credentials</h2>
+
+{% if credentials %}
+  <ul>
+    {% for cred in credentials %}
+      <li>
+        <strong>{{ cred.site_name }}</strong><br>
+        URL: <a href="{{ cred.site_url }}">{{ cred.site_url }}</a><br>
+        Username: {{ cred.username }}<br>
+        Password: {{ cred.decrypted_password }}<br>
+        Notes: {{ cred.notes|default:"(none)" }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No credentials saved yet.</p>
+{% endif %}
+
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit">Log Out</button>
+</form>
+
+
+
+<a href="{% url 'add_credential' %}">➕ Add Another Credential</a>
