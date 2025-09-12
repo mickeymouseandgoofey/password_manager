@@ -11,21 +11,13 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 
-import environ
+import os
+from dotenv import load_dotenv
+from cryptography.fernet import Fernet
 
-env = environ.Env()
-environ.Env.read_env()
-
-print("DEBUG: .env loaded")
-print("DEBUG: FERNET_KEY =", env("FERNET_KEY", default="NOT FOUND"))
-
-
-env = environ.Env()
-environ.Env.read_env()  # This loads the .env file
-
-FERNET_KEY = env("FERNET_KEY")
-
-print("Loaded Fernet Key:", env("FERNET_KEY"))
+load_dotenv()
+fernet_key = os.getenv("FERNET_KEY")
+fernet = Fernet(fernet_key.encode())
 
 
 
