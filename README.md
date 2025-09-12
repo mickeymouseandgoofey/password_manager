@@ -39,24 +39,24 @@ A secure, user-authenticated password manager built with Django and PostgreSQL. 
     python -m venv venv
     venv\Scripts\activate  # On Windows
 
-3. Install dependencies
+3. Install dependencies:
    pip install -r requirements.txt
 
-4. Configure PostgreSQL
+4. Configure PostgreSQL:
     Create a database and user
     Update settings.py with your DB credentials
 
-5. Run Migrations
+5. Run Migrations:
   python manage.py migrate
 
-6. Create Superuser (optional)
+6. Create Superuser (optional):
   python manage.py createsuperuser
 
-7. Start the server
+7. Start the server:
    python manage.py runserver
 
 
-🔐 Encryption Logic
+🔐 Encryption Logic:
   Passwords are encrypted before saving using a custom AES-based utility:
   cred.password_encrypted = encrypt_password(form.cleaned_data['password_plain'])
 
@@ -67,7 +67,7 @@ Decryption happens on dashboard view:
 
 
 
-🧑‍💻 User Flow
+🧑‍💻 User Flow:
 
     Visit /vault/register/ → create account
 
@@ -80,7 +80,7 @@ Decryption happens on dashboard view:
     Logout → redirected to login/register
 
 
-📄 File Structure
+📄 File Structure:
 vault/
 ├── models.py
 ├── views.py
