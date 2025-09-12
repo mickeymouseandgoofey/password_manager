@@ -17,6 +17,7 @@ psycopg==3.2.10
 psycopg2-binary==2.9.10
 pycparser==2.23
 pytest==8.3.5
+python-dotenv==1.1.1
 sqlparse==0.5.3
 tzdata==2025.2
 Werkzeug==3.1.3
