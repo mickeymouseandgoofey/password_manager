@@ -30,6 +30,30 @@ A secure, user-authenticated password manager built with Django and PostgreSQL. 
 
 ## 📦 Installation
 
+Download Git:
+1. Download Git Head to git-scm.com and grab the latest installer.
+
+2. Run the Installer
+   Accept defaults unless you have specific preferences.
+
+   Make sure “Git from the command line and also from 3rd-party software” is selected.
+
+   Choose your preferred editor (VS Code is a solid choice).
+
+   Leave the PATH environment option as default unless you're customizing.
+
+3. Verify Installation Open Command Prompt or PowerShell and run:
+   git --version
+
+   You should see something like git version 2.x.x.
+
+4. Set Up Your Identity (once)
+   git config --global user.name "Mike"
+   git config --global user.email "your-email@example.com"
+
+
+
+
 1. **Clone the repo**
    ```bash
    git clone https://github.com/yourusername/password-manager.git
