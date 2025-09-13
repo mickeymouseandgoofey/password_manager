@@ -42,6 +42,8 @@ Auth	Django built-in auth
    C:\Users\vbox\AppData\Local\Programs\Python\Python310\
    C:\Users\vbox\AppData\Local\Programs\Python\Python310\Scripts\
 
+*** Add Python to your PATH envrironment variable!  Google it! ***
+
 
 
 🧰 2. Install Git
@@ -80,11 +82,12 @@ This project uses PostgreSQL as its database backend.
    Download from postgresql.org/downloads
    During setup:
 
-      Set a password for the postgres superuser
-      Leave port as 5432
-      Install pgAdmin (optional)
-      Verify PostgreSQL is running via services.msc
+   Set a password for the postgres superuser
+   Leave port as 5432
+   Install pgAdmin (optional)
+   Verify PostgreSQL is running via services.msc
 
+*** Note - you should find the location of the installation (usually C: programs\postrgress) and find the BIN folder.  Copy that file path and add to your PATH evnronment variable!  (Google it!)
 
 🛠 Create DB and User
 
@@ -92,6 +95,10 @@ In pgAdmin or psql:
    CREATE DATABASE your_custom_db_name;
    CREATE USER your_postgres_user WITH PASSWORD 'your_postgres_password';
    GRANT ALL PRIVILEGES ON DATABASE your_custom_db_name TO your_postgres_user;
+   GRANT ALL ON SCHEMA public TO your_postgres_user;
+   ALTER DATABASE your_db_name OWNER TO your_postgres_user;
+   ALTER SCHEMA public OWNER TO your_postgres_user;
+   GRANT USAGE, CREATE ON SCHEMA public TO your_postgres_user;
 
 
 
@@ -126,6 +133,8 @@ Type python in your command prompt and paste the following:
 
 ⚙️ 8. Run Migrations
 python manage.py migrate
+
+** if it doesn't work, go back to step 6 and ask copilot for help :)
 
 
 
