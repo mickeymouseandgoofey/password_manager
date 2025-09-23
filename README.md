@@ -91,14 +91,22 @@ This project uses PostgreSQL as its database backend.
 
 🛠 Create DB and User
 
-In pgAdmin or psql:
-   CREATE DATABASE your_custom_db_name;
-   CREATE USER your_postgres_user WITH PASSWORD 'your_postgres_password';
-   GRANT ALL PRIVILEGES ON DATABASE your_custom_db_name TO your_postgres_user;
-   GRANT ALL ON SCHEMA public TO your_postgres_user;
-   ALTER DATABASE your_db_name OWNER TO your_postgres_user;
-   ALTER SCHEMA public OWNER TO your_postgres_user;
-   GRANT USAGE, CREATE ON SCHEMA public TO your_postgres_user;
+In pgAdmin or psql, type the commands:
+   mysql -u root -p
+
+   CREATE DATABASE 'your_custom_db_name';
+   
+   CREATE USER 'your_postgres_user WITH PASSWORD' 'your_postgres_password';
+   
+   GRANT ALL PRIVILEGES ON DATABASE 'your_custom_db_name' TO 'your_postgres_user';
+   
+   GRANT ALL ON SCHEMA public TO 'your_postgres_user';
+   
+   ALTER DATABASE 'your_db_name' OWNER TO 'your_postgres_user';
+   
+   ALTER SCHEMA public OWNER TO 'your_postgres_user';
+   
+   GRANT USAGE, CREATE ON SCHEMA public TO 'your_postgres_user';
 
 
 
